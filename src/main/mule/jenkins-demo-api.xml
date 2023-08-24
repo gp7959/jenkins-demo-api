@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="fb4b0955-4fb2-4c61-a231-ba168ab23ce4" basePath="/api" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="42dc41cd-6cdf-4e07-96f0-6e7b7145d64f" file="common-properties.yaml" />
+	<flow name="jenkins-demo-apiFlow" doc:id="94a0c59c-ab32-40e9-b04f-91e01a2b685d" >
+		<http:listener doc:name="Listener" doc:id="1d4126d0-62a7-4124-8dda-e59c9175ad67" config-ref="HTTP_Listener_config" path="/jenkins-demo"/>
+		<set-payload value='#["Demo Api - Jenkins"]' doc:name="Set Payload" doc:id="3e0cbfc9-d0bb-4ebe-95ac-ec1949040cc3" />
+		<logger level="INFO" doc:name="Logger" doc:id="6a441e09-479d-459a-a791-79ebdecf8ff0" message="#[payload]"/>
+	</flow>
+</mule>
