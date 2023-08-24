@@ -1,4 +1,4 @@
-@Library('shared-Library') _
+@Library('shared-library') _
 
 pipeline{
 
