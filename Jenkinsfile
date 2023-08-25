@@ -24,5 +24,13 @@ pipeline{
                 }
             }
         }
+
+                stage('Munit Test'){
+            steps{
+                script{
+                    nexusPush()
+                }
+            }
+        }
     }
 }
