@@ -25,7 +25,7 @@ pipeline{
             }
         }
 
-                stage('Munit Test'){
+        stage('Push to Nexus'){
             steps{
                 script{
                     nexusPush()
