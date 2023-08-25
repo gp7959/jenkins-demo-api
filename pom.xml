@@ -87,11 +87,11 @@
 			<id>nexus-snapshots</id>
 			<url>http://localhost:8081/repository/pratik-snapshots/</url>
 		</snapshotRepository>
-		<repository>
+		<!-- <repository>
 			<id>NexusRepository</id>
 			<name>Nexus Repository</name>
 			<url>http://localhost:8081/repository/pratik-releases/</url>
-		</repository>
+		</repository> -->
 	</distributionManagement>
 
 </project>
