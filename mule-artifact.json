@@ -5,7 +5,7 @@
   "redeploymentEnabled": true,
   "name": "jenkins-demo-pratik-api",
   "minMuleVersion": "4.4.0",
-  "requiredProduct": "MULE_EE",
+
   "classLoaderModelLoaderDescriptor": {
     "id": "mule",
     "attributes": {
