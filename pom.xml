@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.nagarro</groupId>
@@ -59,11 +62,13 @@
 					</execution>
 				</executions>
 				<configuration>
+				<runtimeProduct>MULE_EE</runtimeProduct>
 					<coverage>
 						<runCoverage>true</runCoverage>
 						<formats>
-							<format>html</format>
 							<format>console</format>
+							<format>html</format>
+							<format>json</format>
 						</formats>
 					</coverage>
 				</configuration>
@@ -132,11 +137,11 @@
 			<id>nexus-snapshots</id>
 			<url>http://localhost:8081/repository/pratik-snapshots/</url>
 		</snapshotRepository>
-<!-- 		<repository>
+		<repository>
 			<id>NexusRepository</id>
 			<name>Nexus Repository</name>
 			<url>http://localhost:8081/repository/pratik-releases/</url>
-		</repository> -->
+		</repository>
 	</distributionManagement>
 
 </project>
