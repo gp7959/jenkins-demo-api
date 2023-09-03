@@ -7,7 +7,6 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-
                 script{
                     gitCheckout(
                         branch: "develop",
@@ -17,10 +16,18 @@ pipeline{
             }
         }
 
-        stage('Munit Test'){
+        stage('Munit Testing'){
             steps{
                 script{
                     munitTest()
+                }
+            }
+        }
+
+        stage('Build Jar'){
+            steps{
+                script{
+                    buildJar()
                 }
             }
         }
