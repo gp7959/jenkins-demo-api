@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="jenkins-demo-api-test-suite.xml" />
+	<munit:test name="jenkins-demo-api-test-suite-jenkins-demo-apiFlowTest" doc:id="9b6cfb99-fcb4-4915-8a22-8e5bb4fc4080" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to jenkins-demo-apiFlow" doc:id="7618db14-ed85-43f1-9787-da2894a27865" name="jenkins-demo-apiFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert doc:name="Assert expression" doc:id="43060233-c584-43f1-87cd-0dd7f84a3853" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

@@ -15,6 +15,7 @@
 
 		<app.runtime>4.4.0</app.runtime>
 		<mule.maven.plugin.version>3.8.2</mule.maven.plugin.version>
+		<munit.version>2.3.14</munit.version>
 	</properties>
 
 	<build>
@@ -28,7 +29,7 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>3.8.2</version>
+				<version>3.8.7</version>
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
@@ -43,6 +44,30 @@
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.mulesoft.munit.tools</groupId>
+				<artifactId>munit-maven-plugin</artifactId>
+				<version>${munit.version}</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+							<goal>coverage-report</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<coverage>
+						<runCoverage>true</runCoverage>
+						<formats>
+							<format>html</format>
+							<format>console</format>
+						</formats>
+					</coverage>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -52,6 +77,26 @@
 			<artifactId>mule-http-connector</artifactId>
 			<version>1.7.3</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-runner</artifactId>
+			<version>2.3.14</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-tools</artifactId>
+			<version>2.3.14</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.weave</groupId>
+			<artifactId>assertions</artifactId>
+			<version>1.0.2</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -87,7 +132,7 @@
 			<id>nexus-snapshots</id>
 			<url>http://localhost:8081/repository/pratik-snapshots/</url>
 		</snapshotRepository>
-		<!-- <repository>
+<!-- 		<repository>
 			<id>NexusRepository</id>
 			<name>Nexus Repository</name>
 			<url>http://localhost:8081/repository/pratik-releases/</url>
