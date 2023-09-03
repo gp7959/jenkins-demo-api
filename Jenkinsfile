@@ -40,5 +40,13 @@ pipeline{
                 }
             }
         }
+
+        stage('Deploy to CloudHub'){
+            steps{
+                script{
+                    deployToCloudhub()
+                }
+            }
+        }
     }
 }
