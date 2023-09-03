@@ -10,7 +10,8 @@ pipeline{
                 script{
                     gitCheckout(
                         branch: "develop",
-                        url: "https://github.com/gp7959/jenkins-demo-api.git"
+                        url: "https://github.com/gp7959/jenkins-demo-api.git",
+                        credentialsId: "GITHUBCREDS"
                     )
                 }
             }
