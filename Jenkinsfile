@@ -25,7 +25,7 @@ pipeline{
             }
         }
 
-                stage('Deploy to CloudHub'){
+        stage('SonarQube Scan'){
             steps{
                 script{
                     sonarScan()
