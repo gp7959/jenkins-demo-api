@@ -34,8 +34,8 @@ pipeline{
                 }
             steps{
                 script{
-                    withSonarQubeEnv(credentialsId: 'SONARTOKEN')
-                    sonarScan()
+                    def credId = 'SONARTOKEN'
+                    sonarScan(credId)
                 }
             }
         }
