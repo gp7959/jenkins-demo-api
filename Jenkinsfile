@@ -27,8 +27,8 @@ pipeline{
 
         stage('SonarQube Scan'){
             steps{
-                withSonarQubeEnv(credentialsId: 'SONARTOKEN')
                 script{
+                    withSonarQubeEnv(credentialsId: 'SONARTOKEN')
                     sonarScan()
                 }
             }
