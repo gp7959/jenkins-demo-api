@@ -34,7 +34,7 @@ pipeline{
                 }
             steps{
                 script{
-                    def credId = 'SONARTOKEN'
+                    def credId = "SONARTOKEN"
                     sonarScan(credId)
                 }
             }
