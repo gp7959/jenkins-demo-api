@@ -25,6 +25,14 @@ pipeline{
             }
         }
 
+                stage('Deploy to CloudHub'){
+            steps{
+                script{
+                    sonarScan()
+                }
+            }
+        }
+
         stage('Build Jar'){
             steps{
                 script{
@@ -48,14 +56,5 @@ pipeline{
                 }
             }
         }
-
-        stage('Deploy to CloudHub'){
-            steps{
-                script{
-                    sonarScan()
-                }
-            }
-        }
-
     }
 }
