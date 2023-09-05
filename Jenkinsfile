@@ -27,6 +27,7 @@ pipeline{
 
         stage('SonarQube Scan'){
             steps{
+                withSonarQubeEnv(credentialsId: 'sonar-api')
                 script{
                     sonarScan()
                 }
