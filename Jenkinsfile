@@ -19,7 +19,7 @@ pipeline{
 
         stage('Munit Testing'){
             tools {
-                   jdk "jdk1.8.0_351"
+                   jdk "JAVA_HOME"
                 }
             steps{
                 script{
@@ -30,7 +30,7 @@ pipeline{
 
         stage('SonarQube Scan'){
             tools {
-                   jdk "jdk-17.0.8"
+                   jdk "JAVA_HOME_17"
                 }
             steps{
                 script{
