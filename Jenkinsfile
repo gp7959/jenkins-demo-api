@@ -18,9 +18,24 @@ pipeline{
         }
 
         stage('Munit Testing'){
+            tools {
+                   jdk "jdk1.8.0_351"
+                }
             steps{
                 script{
                     munitTest()
+                }
+            }
+        }
+
+        stage('SonarQube Scan'){
+            tools {
+                   jdk "jdk-17.0.8"
+                }
+            steps{
+                script{
+                    withSonarQubeEnv(credentialsId: 'SONARTOKEN')
+                    sonarScan()
                 }
             }
         }
