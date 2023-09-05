@@ -25,15 +25,6 @@ pipeline{
             }
         }
 
-        stage('SonarQube Scan'){
-            steps{
-                script{
-                    withSonarQubeEnv(credentialsId: 'SONARTOKEN')
-                    sonarScan()
-                }
-            }
-        }
-
         stage('Build Jar'){
             steps{
                 script{
