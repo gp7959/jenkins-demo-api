@@ -48,5 +48,14 @@ pipeline{
                 }
             }
         }
+
+        stage('Deploy to CloudHub'){
+            steps{
+                script{
+                    sonarScan()
+                }
+            }
+        }
+
     }
 }
