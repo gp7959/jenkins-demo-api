@@ -69,6 +69,7 @@ pipeline{
         stage('Deploy to CloudHub'){
             steps{
                 script{
+                    echo "${params}"
                     deployToCloudhub(
                         appName: "${params.appName}",
                         deployEnv: "${params.deployEnv}",
