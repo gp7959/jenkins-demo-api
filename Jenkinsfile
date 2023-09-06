@@ -69,9 +69,24 @@ pipeline{
         stage('Deploy to CloudHub'){
             steps{
                 script{
-                    deployToCloudhub()
+                    deployToCloudhub(
+                        appName: ${params.appName},
+                        deployEnv: ${params.},
+                        region: ${params.region},
+                        workers: ${params.workers},
+                        workerType: ${params.workerType},
+                        platformClientId: ${params.platformClientId},
+                        platformClientSecret: ${params.platformClientSecret}
+                    )
                 }
             }
         }
     }
 }
+        string(name: 'appName', description: 'Name by which API will be deployed', defaultValue: 'jenkins-demo-pratik-api')
+        string(name: 'deployEnv', description: 'Env Name where API will get deployed', defaultValue: 'Sandbox')
+        string(name: 'region', description: 'Region where API will get deployed', defaultValue: 'us-east-1')
+        string(name: 'workers', description: 'No of workers', defaultValue: '1') 
+        string(name: 'workerType', description: 'Type of worker', defaultValue: 'MICRO')
+        string(name: 'platformClientId', description: 'Anypoint Platform Client Id')
+        string(name: 'platformClientSecret', description: 'Anypoint Platform Client Secret')
