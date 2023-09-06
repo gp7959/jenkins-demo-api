@@ -13,13 +13,15 @@
 	<name>jenkins-demo-pratik-api</name>
 
 	<properties>
+		<anypoint.platform.client_id>${platformClientId}</anypoint.platform.client_id>
+		<anypoint.platform.client_secret>${platformClientSecret}</anypoint.platform.client_secret>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<app.runtime>4.4.0</app.runtime>
 		<mule.maven.plugin.version>3.8.2</mule.maven.plugin.version>
 		<munit.version>2.3.14</munit.version>
 		<sonar.sources>src/</sonar.sources>
+		<cloudhub.url>https://anypoint.mulesoft.com</cloudhub.url>
 	</properties>
 
 	<build>
@@ -111,15 +113,16 @@
 						<extensions>true</extensions>
 						<configuration>
 							<cloudHubDeployment>
-								<uri>https://anypoint.mulesoft.com</uri>
+								<uri>${cloudhub.url}</uri>
 								<muleVersion>${app.runtime}</muleVersion>
-								<applicationName>jenkins-demo-pratik-api</applicationName>
-								<environment>Sandbox</environment>
-								<region>us-east-1</region>
-								<workers>1</workers>
-								<workerType>MICRO</workerType>
+								<applicationName>${appName}</applicationName>
+								<environment>${deployEnv}</environment>
+								<region>${region}</region>
+								<workers>${workers}</workers>
+								<workerType>${workerType}</workerType>
 								<deploymentTimeout>2000000</deploymentTimeout>
 								<server>my.anypoint.credentials</server>
+								<properties />
 							</cloudHubDeployment>
 						</configuration>
 					</plugin>
