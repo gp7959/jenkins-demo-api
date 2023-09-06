@@ -71,7 +71,7 @@ pipeline{
                 script{
                     deployToCloudhub(
                         appName: "${params.appName}",
-                        deployEnv: "${params.}",
+                        deployEnv: "${params.deployEnv}",
                         region: "${params.region}",
                         workers: "${params.workers}",
                         workerType: "${params.workerType}",
