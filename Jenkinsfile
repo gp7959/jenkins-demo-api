@@ -10,8 +10,8 @@ pipeline{
         string(name: 'region', description: 'Region where API will get deployed', defaultValue: 'us-east-1')
         string(name: 'workers', description: 'No of workers', defaultValue: '1') 
         string(name: 'workerType', description: 'Type of worker', defaultValue: 'MICRO')
-        string(name: 'platformClientId', description: 'Anypoint Platform Client Id')
-        string(name: 'platformClientSecret', description: 'Anypoint Platform Client Secret')
+        string(name: 'platformClientId', description: 'Anypoint Platform Client Id', defaultValue: 'a79b0e9313a245de8c41ffd2b1afe09e')
+        string(name: 'platformClientSecret', description: 'Anypoint Platform Client Secret', defaultValue: '69F8F7fEB2Cd422f9CA8e66bEe60d5DF')
     }
 
     stages{
